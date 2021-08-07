@@ -6,16 +6,11 @@
 /*   By: rrajaobe <rrajaobe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 23:20:06 by rrajaobe          #+#    #+#             */
-/*   Updated: 2021/08/06 17:20:52 by rrajaobe         ###   ########.fr       */
+/*   Updated: 2021/08/07 16:11:17 by rrajaobe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-static void	ft_putchar(char c, int fd)
-{
-	write(fd, &c, 1);
-}
 
 static int	ft_putstr_with_null_string_case_fd(char *s, int fd)
 {
@@ -26,7 +21,7 @@ static int	ft_putstr_with_null_string_case_fd(char *s, int fd)
 		return (ft_putstr_with_null_string_case_fd("(null)", 1));
 	while (*s)
 	{
-		ft_putchar(*s++, fd);
+		ft_putchar_fd(*s++, fd);
 		count++;
 	}
 	return (count);

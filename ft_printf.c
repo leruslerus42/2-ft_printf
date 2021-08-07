@@ -6,16 +6,11 @@
 /*   By: rrajaobe <rrajaobe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 09:31:49 by rrajaobe          #+#    #+#             */
-/*   Updated: 2021/08/06 17:20:49 by rrajaobe         ###   ########.fr       */
+/*   Updated: 2021/08/07 16:11:14 by rrajaobe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-static void	ft_putchar(char c, int fd)
-{
-	write(fd, &c, 1);
-}
 
 int	ft_printf(const char *format, ...)
 {
@@ -34,9 +29,21 @@ int	ft_printf(const char *format, ...)
 			format++;
 			continue ;
 		}
-		ft_putchar(*format, 1);
+		ft_putchar_fd(*format, 1);
 		format++;
+		i++;
 	}
 	va_end(args);
+	return (i);
+}
+
+/*
+int main()
+{
+	//ft_printf("%c\012", '0');
+	//printf("%c", '0');
+	printf(" %c %c %c \012", '2', '1', 0);
+	ft_printf(" %c %c %c ", '2', '1', 0);
 	return (0);
 }
+*/

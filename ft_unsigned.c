@@ -6,22 +6,19 @@
 /*   By: rrajaobe <rrajaobe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 23:21:17 by rrajaobe          #+#    #+#             */
-/*   Updated: 2021/08/06 17:20:55 by rrajaobe         ###   ########.fr       */
+/*   Updated: 2021/08/07 16:11:27 by rrajaobe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-static void	ft_putchar(char c, int fd)
-{
-	write(fd, &c, 1);
-}
 
 static int	integer_len(unsigned int n)
 {
 	int	i;
 
 	i = 0;
+	if (n == 0)
+		i++;
 	while (n)
 	{
 		n /= 10;
@@ -44,7 +41,7 @@ static int	ft_putunsnbr_fd(unsigned int n, int fd, int button)
 	{
 		ft_putunsnbr_fd(n / 10, fd, 1);
 	}
-	ft_putchar((n % 10) + '0', fd);
+	ft_putchar_fd((n % 10) + '0', fd);
 	if (n == n2)
 		return (integer_len(n));
 	return (0);

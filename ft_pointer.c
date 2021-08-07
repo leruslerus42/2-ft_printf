@@ -6,33 +6,28 @@
 /*   By: rrajaobe <rrajaobe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 23:20:17 by rrajaobe          #+#    #+#             */
-/*   Updated: 2021/08/06 17:20:46 by rrajaobe         ###   ########.fr       */
+/*   Updated: 2021/08/07 16:10:57 by rrajaobe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-static void	ft_putchar(char c, int fd)
-{
-	write(fd, &c, 1);
-}
-
 static void	hexa_alphabet(long int n)
 {
 	if (n >= 0 && n <= 9)
-		(ft_putchar(n + '0', 1));
+		(ft_putchar_fd(n + '0', 1));
 	else if (n == 10)
-		(ft_putchar('a', 1));
+		(ft_putchar_fd('a', 1));
 	else if (n == 11)
-		(ft_putchar('b', 1));
+		(ft_putchar_fd('b', 1));
 	else if (n == 12)
-		(ft_putchar('c', 1));
+		(ft_putchar_fd('c', 1));
 	else if (n == 13)
-		(ft_putchar('d', 1));
+		(ft_putchar_fd('d', 1));
 	else if (n == 14)
-		(ft_putchar('e', 1));
+		(ft_putchar_fd('e', 1));
 	else if (n == 15)
-		(ft_putchar('f', 1));
+		(ft_putchar_fd('f', 1));
 }
 
 static int	ft_convert(unsigned long int p, int *ptr)
@@ -47,9 +42,10 @@ static int	ft_convert(unsigned long int p, int *ptr)
 		p /= 16;
 		i++;
 	}
-	ptr_len = i;
+	ptr_len = i + 2;
 	while (--i >= 0)
 		hexa_alphabet(ptr[i]);
+	free(ptr);
 	return (ptr_len);
 }
 
@@ -60,14 +56,14 @@ int	ft_pointer(va_list args)
 	int				i;
 	int				*ptr;
 
-	ft_putchar('0', 1);
-	ft_putchar('x', 1);
+	ft_putchar_fd('0', 1);
+	ft_putchar_fd('x', 1);
 	i = 0;
 	p = va_arg(args, unsigned long);
 	tmp = p;
 	if (!p)
 	{
-		ft_putchar(48, 1);
+		ft_putchar_fd(48, 1);
 		return (3);
 	}
 	while (tmp)
