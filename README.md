@@ -3,4 +3,3 @@ Why use the predefined function printf, when you already have your own ft_printf
 
 A recoding of the predefinite function printf from the standard library <stdio.h> using the variading arguments,
 handlig the flags "cspdiuxX%".
-The buffer management is not implemented.
