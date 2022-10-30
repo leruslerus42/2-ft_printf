@@ -24,7 +24,7 @@ The printf function copies a string of character to the stdout. The string can i
 As all other C projects at the 42 school, the code has to written in accordance with the norm:
 - only 25 lines per function
 - only 5 functions per file
-- the only predefined functions allowed for this project are: write, read, malloc and free.
+- the only predefined functions allowed for this project are: write, malloc, free, va_start, va_arg, va_copy, va_end.
 
 ## RESULT 
 <img width="1992" alt="Screen Shot 2021-10-17 at 9 09 50 AM" src="https://user-images.githubusercontent.com/85942176/137615923-192c1574-f5cf-4580-99db-a64069b81df6.png">
