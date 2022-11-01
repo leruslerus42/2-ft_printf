@@ -27,7 +27,8 @@ As all other C projects at the 42 school, the code has to written in accordance 
 - the only predefined functions allowed for this project are: write, malloc, free, va_start, va_arg, va_copy, va_end.
 
 ## RESULT 
-<img width="1992" alt="Screen Shot 2021-10-17 at 9 09 50 AM" src="https://user-images.githubusercontent.com/85942176/137615923-192c1574-f5cf-4580-99db-a64069b81df6.png">
+
+<img width="847" alt="Screenshot 2022-11-01 at 06 57 46" src="https://user-images.githubusercontent.com/85942176/199168624-103095da-3bd9-43e0-875f-3ca8c9177e68.png">
 
 ## TESTING 
 - git@github.com:Tripouille/printfTester.git
